@@ -1,8 +1,7 @@
 plugins {
-    id 'java'
+    id 'application'
     id 'checkstyle'
     id 'jacoco'
-    id 'application'
 }
 
 group = 'hexlet.code'
@@ -13,30 +12,25 @@ repositories {
 }
 
 compileJava {
-    options.release = 17
+    options.release.set(19)
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation platform('org.junit:junit-bom:5.9.3')
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.9.3')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.9.3')
 }
 
-test {
-    useJUnitPlatform()
-    finalizedBy jacocoTestReport
+application {
+    mainClass = 'hexlet.code.App'
 }
 
 jacocoTestReport {
-    dependsOn test
     reports {
         xml.required = true
         csv.required = false
         html.required = false
     }
-}
-
-application {
-    mainClass = 'hexlet.code.App'
 }
 
 test {
