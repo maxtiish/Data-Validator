@@ -21,4 +21,13 @@ public class MapSchema extends BaseSchema {
         addPredicate("sizeOf", isSizeOf);
         return this;
     }
+
+    public MapSchema shape(Map<String, BaseSchema> schemas) {
+        Predicate<Object> isRight = o -> {
+            return schemas.keySet().stream()
+                    .allMatch(k -> schemas.get(k).isValid(((Map) o).get(k)));
+        };
+        addPredicate("shape", isRight);
+        return this;
+    }
 }
