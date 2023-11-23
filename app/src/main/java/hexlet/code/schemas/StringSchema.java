@@ -10,12 +10,12 @@ public class StringSchema extends BaseSchema {
 
 
     @Override
-    public final StringSchema required() {
+    public StringSchema required() {
         this.isRequired = true;
         return this;
     }
 
-    public StringSchema minLength(int minLength) {
+    public final StringSchema minLength(int minLength) {
         Predicate<Object> isMinLength = o -> {
             String str = o.toString();
             return str.length() >= minLength;
@@ -24,7 +24,7 @@ public class StringSchema extends BaseSchema {
         return this;
     }
 
-    public StringSchema contains(String str) {
+    public final StringSchema contains(String str) {
         Predicate<Object> contains = o -> o.toString().contains(str);
         addPredicate("contains", contains);
         return this;

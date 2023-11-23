@@ -8,12 +8,12 @@ public class NumberSchema extends BaseSchema {
     }
 
     @Override
-    public final NumberSchema required() {
+    public NumberSchema required() {
         this.isRequired = true;
         return this;
     }
 
-    public NumberSchema positive() {
+    public final NumberSchema positive() {
         Predicate<Integer> isPositive = o -> {
             return o > 0;
         };
@@ -21,7 +21,7 @@ public class NumberSchema extends BaseSchema {
         return this;
     }
 
-    public NumberSchema range(int minNum, int maxNum) {
+    public final NumberSchema range(int minNum, int maxNum) {
         Predicate<Integer> isInRange = o -> {
             return o >= minNum && o <= maxNum;
         };

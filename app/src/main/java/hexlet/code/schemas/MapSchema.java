@@ -9,12 +9,12 @@ public class MapSchema extends BaseSchema {
     }
 
     @Override
-    public final MapSchema required() {
+    public MapSchema required() {
         this.isRequired = true;
         return this;
     }
 
-    public MapSchema sizeof(int size) {
+    public final MapSchema sizeof(int size) {
         Predicate<Map> isSizeOf = o -> {
             return o.size() >= size;
         };
@@ -22,7 +22,7 @@ public class MapSchema extends BaseSchema {
         return this;
     }
 
-    public MapSchema shape(Map<String, BaseSchema> schemas) {
+    public final MapSchema shape(Map<String, BaseSchema> schemas) {
         Predicate<Object> isRight = o -> {
             return schemas.keySet().stream()
                     .allMatch(k -> schemas.get(k).isValid(((Map) o).get(k)));
