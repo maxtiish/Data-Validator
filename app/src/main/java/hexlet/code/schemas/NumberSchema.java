@@ -8,7 +8,7 @@ public class NumberSchema extends BaseSchema {
     }
 
     @Override
-    public NumberSchema required() {
+    final public NumberSchema required() {
         this.isRequired = true;
         return this;
     }

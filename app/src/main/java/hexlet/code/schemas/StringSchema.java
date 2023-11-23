@@ -10,7 +10,7 @@ public class StringSchema extends BaseSchema {
 
 
     @Override
-    public StringSchema required() {
+    public final StringSchema required() {
         this.isRequired = true;
         return this;
     }
