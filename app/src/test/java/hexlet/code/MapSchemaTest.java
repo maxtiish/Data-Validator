@@ -28,7 +28,7 @@ public class MapSchemaTest {
         data.put("key1", "value1");
         assertTrue(obj.isValid(data));
 
-        obj.sizeOf(2);
+        obj.sizeof(2);
         assertFalse(obj.isValid(data));
         data.put("key2", "value2");
         assertTrue(obj.isValid(data));
