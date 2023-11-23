@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ValidatorTest {
+public class StringSchemaTest {
     private String testText1 = "Pumpkin pie";
     private String testText2 = "Pumpkin pumpkin pie";
     private final int minLength = 15;
