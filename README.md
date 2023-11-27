@@ -34,7 +34,7 @@ NumberSchema schema = v.number().required().positive();
 schema.isValid(-10); // false
 schema.isValid(10); // true
 
-// Объект Map с поддержкой проверки структуры
+// Map
 schema.isValid(-10); // false
 schema.isValid(10); // true
 
