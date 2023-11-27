@@ -13,6 +13,7 @@ public class NumberSchemaTest {
         NumberSchema obj = Validator.number();
         Assertions.assertInstanceOf(NumberSchema.class, obj);
         assertTrue(obj.isValid(""));
+        assertFalse(obj.isValid("string"));
 
         obj.required();
 

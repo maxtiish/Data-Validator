@@ -4,7 +4,7 @@ import java.util.function.Predicate;
 
 public class NumberSchema extends BaseSchema {
     public NumberSchema() {
-        addPredicate("isRequired", o -> o instanceof Number && !o.equals(""));
+        addPredicate("isRequired", o -> o instanceof Number);
     }
 
     @Override
