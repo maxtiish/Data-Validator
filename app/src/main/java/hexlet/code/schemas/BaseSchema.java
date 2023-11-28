@@ -16,8 +16,11 @@ public abstract class BaseSchema {
     }
 
     public final boolean isValid(Object obj) {
-        if (obj == null || obj.equals("")) {
-            return !isRequired;
+        if (!isRequired && (obj == null || obj.equals(""))) {
+            return true;
+        }
+        if (!isRequired && this.predicates.containsKey("isRequired")) {
+            return true;
         }
         return predicates.entrySet().stream()
                 .allMatch(o -> o.getValue().test(obj));
