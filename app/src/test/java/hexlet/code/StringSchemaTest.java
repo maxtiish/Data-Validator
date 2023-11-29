@@ -32,7 +32,5 @@ public class StringSchemaTest {
 
         assertTrue(obj.isValid(testText2));
         assertFalse(obj.isValid(testText1));
-
-
     }
 }
