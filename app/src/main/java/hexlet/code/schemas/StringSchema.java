@@ -8,7 +8,6 @@ public class StringSchema extends BaseSchema {
         addPredicate("isRequired", o -> o instanceof String && !(o.equals("")));
     }
 
-
     @Override
     public final StringSchema required() {
         this.isRequired = true;

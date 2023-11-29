@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 
 public class MapSchema extends BaseSchema {
     public MapSchema() {
-        addPredicate("isRequired", o -> o instanceof Map && o != null);
+        addPredicate("isRequired", o -> o instanceof Map);
     }
 
     @Override

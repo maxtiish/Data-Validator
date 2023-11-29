@@ -11,9 +11,6 @@ public class StringSchemaTest {
     private String testText1 = "Pumpkin pie";
     private String testText2 = "Pumpkin pumpkin pie";
     private final int minLength = 15;
-
-
-
     @Test
     public void testStringSchema() {
         StringSchema obj = Validator.string();
